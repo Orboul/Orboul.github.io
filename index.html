@@ -4,61 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - My GitHub Pages Site</title>
+    <title>Home - My Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
         }
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav a {
-            color: #fff;
-            margin: 0 15px;
+            color: white;
+            margin: 0 20px;
             text-decoration: none;
+            font-weight: 500;
         }
         nav a:hover {
             text-decoration: underline;
         }
-        main {
-            padding: 20px;
-            max-width: 800px;
+        .hero {
+            background-color: #ffffff;
+            padding: 100px 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .section {
+            padding: 60px 20px;
+            max-width: 1000px;
             margin: auto;
+        }
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+        .section p {
+            line-height: 1.6;
+            color: #555;
         }
         footer {
             text-align: center;
-            padding: 1rem;
+            padding: 20px;
             background-color: #333;
             color: #fff;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Site</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
         </nav>
     </header>
 
-    <main>
-        <h2>Home Page</h2>
-        <p>This is the home page of my GitHub Pages site. Here, you can find information about me and my projects.</p>
-        <p>Feel free to explore and learn more about what I do!</p>
-    </main>
+    <div class="hero">
+        <h1>Hello, I'm [Your Name]</h1>
+        <p>Welcome to my personal website. I'm a passionate developer who loves creating things for the web.</p>
+    </div>
+
+    <section class="section">
+        <h2>Projects</h2>
+        <p>Here are some of the projects I've worked on. I enjoy working with various technologies and bringing ideas to life through code.</p>
+        <p>Feel free to check out my GitHub for more of my work and collaborations.</p>
+    </section>
 
     <footer>
-        &copy; 2024 My GitHub Pages Site. All rights reserved.
+        &copy; 2024 [Your Name]. All rights reserved.
     </footer>
 </body>
 </html>
