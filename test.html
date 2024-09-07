@@ -7,23 +7,57 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #343a40;
-            color: #f8f9fa;
+            background-color: #1e1e1e;
+            color: #eaeaea;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .navbar {
-            background-color: #495057;
+            background-color: #212121;
+        }
+        .navbar-brand, .nav-link {
+            color: #eaeaea !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #f39c12 !important;
+        }
+        .header-bg {
+            background: url('https://via.placeholder.com/1920x600/333/eee') no-repeat center center;
+            background-size: cover;
+            color: #eaeaea;
+            padding: 5rem 0;
+        }
+        .header-bg h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .header-bg p {
+            font-size: 1.25rem;
         }
         .card {
-            background-color: #495057;
-            border: 1px solid #6c757d;
+            background-color: #2c2c2c;
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         .card-title {
-            color: #f8f9fa;
+            color: #f39c12;
         }
         .footer {
-            background-color: #495057;
-            color: #f8f9fa;
-            padding: 1rem 0;
+            background-color: #212121;
+            color: #eaeaea;
+            padding: 2rem 0;
+        }
+        .form-control, .btn-primary {
+            background-color: #333;
+            border: none;
+            color: #eaeaea;
+        }
+        .btn-primary {
+            border-radius: 0.3rem;
+        }
+        .btn-primary:hover {
+            background-color: #f39c12;
+            color: #212121;
         }
     </style>
 </head>
@@ -48,10 +82,10 @@
         </div>
     </nav>
 
-    <header class="text-center py-5">
+    <header class="header-bg text-center text-light">
         <div class="container">
-            <h1 class="display-4">Welcome to Service Store</h1>
-            <p class="lead">Offering expert services at competitive rates.</p>
+            <h1>Welcome to Service Store</h1>
+            <p>Your trusted partner for professional services.</p>
         </div>
     </header>
 
@@ -59,29 +93,29 @@
         <div class="container">
             <h2 class="text-center mb-4">Our Services & Rates</h2>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Service 1</h5>
-                            <p class="card-text">Description of Service 1.</p>
+                            <p class="card-text">Expert service for your needs.</p>
                             <p class="card-text">Hourly Rate: $50</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Service 2</h5>
-                            <p class="card-text">Description of Service 2.</p>
+                            <p class="card-text">High-quality solutions tailored for you.</p>
                             <p class="card-text">Hourly Rate: $60</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Service 3</h5>
-                            <p class="card-text">Description of Service 3.</p>
+                            <p class="card-text">Professional assistance at its best.</p>
                             <p class="card-text">Hourly Rate: $70</p>
                         </div>
                     </div>
