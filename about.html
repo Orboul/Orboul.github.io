@@ -6,74 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - My Profile</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            margin: 0;
             font-family: 'Roboto', sans-serif;
             background-color: #1a1a1a;
             color: #e0e0e0;
         }
-        header {
+        .navbar {
             background-color: #003366; /* Dark Blue */
-            color: #e0e0e0;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
-        nav a {
-            color: #e0e0e0;
-            margin: 0 20px;
-            text-decoration: none;
-            font-weight: 500;
+        .navbar-nav .nav-link {
+            color: #e0e0e0 !important;
         }
-        nav a:hover {
-            text-decoration: underline;
+        .navbar-nav .nav-link:hover {
+            color: #b0b0b0 !important;
         }
         .section {
             padding: 60px 20px;
-            max-width: 1000px;
-            margin: auto;
             background-color: #333333; /* Dark Gray */
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         .section h2 {
             font-size: 2rem;
-            margin-bottom: 20px;
             color: #003366; /* Dark Blue */
         }
-        .section p {
-            line-height: 1.6;
-            color: #e0e0e0;
-        }
         footer {
-            text-align: center;
-            padding: 20px;
             background-color: #000000; /* Black */
             color: #e0e0e0;
+            padding: 20px;
             margin-top: 40px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-        </nav>
-    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">My Profile</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <section class="section">
-        <h2>About Me</h2>
-        <p>Hello! I'm [Your Name], a developer with a passion for building responsive and dynamic web applications. I have experience in various web technologies including HTML, CSS, JavaScript, React, and more.</p>
-        <p>I enjoy problem-solving and am constantly learning new tools and techniques to improve my skills. When I'm not coding, you can find me exploring new places, reading books, or experimenting with new recipes in the kitchen.</p>
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hello! I'm [Your Name], a developer with a passion for building responsive and dynamic web applications. I have experience in various web technologies including HTML, CSS, JavaScript, React, and more.</p>
+            <p>I enjoy problem-solving and am constantly learning new tools and techniques to improve my skills. When I'm not coding, you can find me exploring new places, reading books, or experimenting with new recipes in the kitchen.</p>
+        </div>
     </section>
 
     <footer>
-        &copy; 2024 [Your Name]. All rights reserved.
+        <div class="container text-center">
+            &copy; 2024 [Your Name]. All rights reserved.
+        </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-</html> 
+</html>
