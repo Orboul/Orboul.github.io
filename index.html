@@ -2,96 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - My Profile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Matthew Sawatzky - IT Support</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #1a1a1a;
-            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-        .navbar {
-            background-color: #003366; /* Dark Blue */
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: left;
         }
-        .navbar-nav .nav-link {
-            color: #e0e0e0 !important;
-        }
-        .navbar-nav .nav-link:hover {
-            color: #b0b0b0 !important;
-        }
-        .hero {
-            background-color: #002244; /* Darker Blue */
-            padding: 100px 20px;
+        .sub-header {
+            background-color: #ccc;
+            padding: 10px;
             text-align: center;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            color: #b0b0b0;
-        }
-        .section {
-            padding: 60px 20px;
-            background-color: #333333; /* Dark Gray */
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .section h2 {
-            font-size: 2rem;
-            color: #003366; /* Dark Blue */
-        }
-        footer {
-            background-color: #000000; /* Black */
-            color: #e0e0e0;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
             padding: 20px;
-            margin-top: 40px;
+        }
+        .box {
+            background-color: #f9f9f9;
+            border-radius: 15px;
+            padding: 20px;
+            width: calc(33% - 40px); /* Adjust width based on container padding and gaps */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+        .box input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">My Profile</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="hero">
-        <h1>Hello, I'm [Your Name]</h1>
-        <p>Welcome to my personal website. I'm a passionate developer who loves creating things for the web.</p>
+    <div class="header">
+        Matthew Sawatzky
     </div>
-
-    <section class="section">
-        <div class="container">
-            <h2>Projects</h2>
-            <p>Here are some of the projects I've worked on. I enjoy working with various technologies and bringing ideas to life through code.</p>
-            <p>Feel free to check out my GitHub for more of my work and collaborations.</p>
+    <div class="sub-header">
+        IT Support
+    </div>
+    <div class="container">
+        <div class="box">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Description">
+            <input type="text" placeholder="Price">
         </div>
-    </section>
-
-    <footer>
-        <div class="container text-center">
-            &copy; 2024 [Your Name]. All rights reserved.
+        <div class="box">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Description">
+            <input type="text" placeholder="Price">
         </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <div class="box">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Description">
+            <input type="text" placeholder="Price">
+        </div>
+        <div class="box">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Description">
+            <input type="text" placeholder="Price">
+        </div>
+        <div class="box">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Description">
+            <input type="text" placeholder="Price">
+        </div>
+        <div class="box">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Description">
+            <input type="text" placeholder="Price">
+        </div>
+    </div>
 </body>
 </html>
