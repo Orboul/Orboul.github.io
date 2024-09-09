@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <style>
+        .plaque {
+            position: relative;
+            padding: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f9f9f9;
+            margin: 16px;
+            /* Space around each plaque */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            /* Stack items vertically */
+            cursor: pointer;
+            /* Indicate that it's clickable */
+            transition: transform 0.3s ease;
+            height: 300px;
+            /* Fixed height to prevent shifting */
+        }
+
+        .plaque:hover {
+            transform: scale(1.05);
+            /* Slight expansion on hover */
+        }
+
+        .description {
+            max-height: 60px;
+            /* Limited height initially */
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0;
+            margin-top: 16px;
+            /* Space above the description */
+        }
+
+        .plaque.expanded .description {
+            max-height: 200px;
+            /* Allow more space for expanded content */
+            padding: 10px 0;
+            /* Add padding when expanded */
+        }
+
+        .name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            color: green;
+            font-size: 18px;
+            margin-bottom: 4px;
+            /* Space below price */
+        }
+
+        .additional-info {
+            color: red;
+            /* Red text color */
+            font-size: 14px;
+            /* Smaller text size */
+            margin-bottom: 12px;
+            /* Space below additional info */
+        }
+
+        .buy-button {
+            margin-top: auto;
+            /* Push button to the bottom of the plaque */
+            padding: 10px;
+            background-color: #007bff;
+            /* Blue background */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-button {
+            margin-top: auto;
+            /* Push button to the bottom of the plaque */
+            padding: 20px;
+            background-color: #5e5e5e;
+            /* Blue background */
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #0056b3;
+            /* Darker blue on hover */
+        }
+
+        .contact-button:focus {
+            outline: none;
+        }
+
+        .buy-button:hover {
+            background-color: #0056b3;
+            /* Darker blue on hover */
+        }
+
+        .buy-button:focus {
+            outline: none;
+        }
+
+        /* Ensure expanded state works on hover for desktops */
+        @media (hover: hover) {
+            .plaque:hover .description {
+                max-height: 200px;
+                padding: 10px 0;
+                /* Add padding when expanded */
+            }
+        }
+
+        /* Disable the hover effect on mobile devices */
+        @media (hover: none) {
+            .plaque.expanded .description {
+                max-height: 200px;
+                padding: 10px 0;
+                /* Add padding when expanded */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Side Navigation -->
+    <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+        <h1 class="w3-xxxlarge w3-text-theme">Side Navigation</h1>
+        <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+        <a href="#" class="w3-bar-item w3-button">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button">Link 3</a>
+        <a href="#" class="w3-bar-item w3-button">Link 4</a>
+    </nav>
+
+    <!-- Header -->
+    <header class="w3-container w3-theme w3-padding" id="myHeader">
+        <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i>
+        <div class="w3-center">
+            <h4>Tech Support</h4>
+            <h1 class="w3-xxxlarge w3-animate-bottom">Bommer IT</h1>
+            <div class="w3-padding-32">
+                <button class="contact-button" onclick="redirectToContact('contact', '$0.0')">Contact</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal -->
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-top">
+            <header class="w3-container w3-theme-l1">
+                <span onclick="document.getElementById('id01').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h4>Oh snap! We just showed you a modal..</h4>
+                <h5>Because we can <i class="fa fa-smile-o"></i></h5>
+            </header>
+            <div class="w3-padding">
+                <p>Cool huh? Ok, enough teasing around..</p>
+                <p>Go to our <a class="w3-btn" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
+            </div>
+            <footer class="w3-container w3-theme-l1">
+                <p>Modal footer</p>
+            </footer>
+        </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-margin-top">
+        <div class="w3-third">
+            <div class="w3-card w3-container" style="min-height:460px">
+                <h3>Responsive</h3><br>
+                <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+                <p>It Consulting</p>
+                <p>Get to know your device or software</p>
+                <p>Fits any screen sizes</p>
+                <p>PC Tablet and Mobile</p>
+            </div>
+        </div>
+
+        <div class="w3-third">
+            <div class="w3-card w3-container" style="min-height:460px">
+                <h3>Standard CSS</h3><br>
+                <i class="fa fa-css3 w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+                <p>Standard CSS only</p>
+                <p>Easy to learn</p>
+                <p>No need for jQuery</p>
+                <p>No JavaScript library</p>
+            </div>
+        </div>
+
+        <div class="w3-third">
+            <div class="w3-card w3-container" style="min-height:460px">
+                <h3>Design</h3><br>
+                <i class="fa fa-diamond w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+                <p>Paper like design</p>
+                <p>Bold colors and shadows</p>
+                <p>Equal across platforms</p>
+                <p>Equal across devices</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <br>
+
+
+
+    <div class="w3-container">
+        <div class="w3-row">
+            <div class="w3-col l4 m6 s12 w3-padding-small">
+                <div class="plaque w3-card" onclick="toggleDescription(this)">
+                    <div class="name">Item Name 1</div>
+                    <div class="price">$99.99</div>
+                    <div class="additional-info">
+                        More info about Item 1
+                    </div>
+                    <div class="description collapsed">
+                        This is a longer description for Item 1 that will be truncated until you hover over the plaque
+                        or tap on it. Tap on this plaque to see the full description.
+                    </div>
+                    <button class="buy-button" onclick="redirectToContact('Item Name 1')">Buy Now</button>
+                </div>
+            </div>
+            <div class="w3-col l4 m6 s12 w3-padding-small">
+                <div class="plaque w3-card" onclick="toggleDescription(this)">
+                    <div class="name">Item Name 2</div>
+                    <div class="price">$79.99</div>
+                    <div class="additional-info">
+                        More info about Item 2
+                    </div>
+                    <div class="description collapsed">
+                        This is a longer description for Item 2 that will be truncated until you hover over the plaque
+                        or tap on it. Tap on this plaque to see the full description.
+                    </div>
+                    <button class="buy-button" onclick="redirectToContact('Item Name 1')">Buy Now</button>
+                </div>
+            </div>
+            <div class="w3-col l4 m6 s12 w3-padding-small">
+                <div class="plaque w3-card" onclick="toggleDescription(this)">
+                    <div class="name">Item Name 3</div>
+                    <div class="price">$89.99</div>
+                    <div class="additional-info">
+                        More info about Item 3
+                    </div>
+                    <div class="description collapsed">
+                        This is a longer description for Item 3 that will be truncated until you hover over the plaque
+                        or tap on it. Tap on this plaque to see the full description.
+                    </div>
+                    <button class="buy-button" onclick="redirectToContact('Item Name 1')">Buy Now</button>
+                </div>
+            </div>
+            <div class="w3-col l4 m6 s12 w3-padding-small">
+                <div class="plaque w3-card" onclick="toggleDescription(this)">
+                    <div class="name">Item Name 3</div>
+                    <div class="price">$89.99</div>
+                    <div class="additional-info">
+                        More info about Item 3
+                    </div>
+                    <div class="description collapsed">
+                        This is a longer description for Item 3 that will be truncated until you hover over the plaque
+                        or tap on it. Tap on this plaque to see the full description.
+                    </div>
+                    <button class="buy-button" onclick="redirectToContact('Item Name 1')">Buy Now</button>
+                </div>
+            </div>
+            <div class="w3-col l4 m6 s12 w3-padding-small">
+                <div class="plaque w3-card" onclick="toggleDescription(this)">
+                    <div class="name">Item Name 3</div>
+                    <div class="price">$89.99</div>
+                    <div class="additional-info">
+                        More info about Item 3
+                    </div>
+                    <div class="description collapsed">
+                        This is a longer description for Item 3 that will be truncated until you hover over the plaque
+                        or tap on it. Tap on this plaque to see the full description.
+                    </div>
+                    <button class="buy-button" onclick="redirectToContact('Item Name 1')">Buy Now</button>
+                </div>
+            </div>
+            <!-- Add more plaques as needed -->
+        </div>
+    </div>
+
+    <hr>
+    <br>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-theme-dark w3-padding-16">
+        <h3>It Support</h3>
+        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+        <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+            <span class="w3-text w3-theme-light w3-padding">Go To Top</span> 
+            <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+                    <i class="fa fa-chevron-circle-up"></i></span></a>
+        </div>
+
+    </footer>
+
+    <!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+    <script>
+        // Side navigation
+        function w3_open() {
+            var x = document.getElementById("mySidebar");
+            x.style.width = "100%";
+            x.style.fontSize = "40px";
+            x.style.paddingTop = "10%";
+            x.style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+
+        // Tabs
+        function openCity(evt, cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            var activebtn = document.getElementsByClassName("testbtn");
+            for (i = 0; i < x.length; i++) {
+                activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " w3-dark-grey";
+        }
+
+        var mybtn = document.getElementsByClassName("testbtn")[0];
+        mybtn.click();
+
+        // Accordions
+        function myAccFunc(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+        // Slideshows
+        var slideIndex = 1;
+
+        function plusDivs(n) {
+            slideIndex = slideIndex + n;
+            showDivs(slideIndex);
+        }
+
+        function showDivs(n) {
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length };
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+
+        showDivs(1);
+
+        // Progress Bars
+        function move() {
+            var elem = document.getElementById("myBar");
+            var width = 5;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (width == 100) {
+                    clearInterval(id);
+                } else {
+                    width++;
+                    elem.style.width = width + '%';
+                    elem.innerHTML = width * 1 + '%';
+                }
+            }
+        }
+        // other
+        function toggleDescription(clickedPlaque) {
+            // Get all plaques
+            const plaques = document.querySelectorAll('.plaque');
+
+            // Close all plaques except the one clicked
+            plaques.forEach(plaque => {
+                if (plaque !== clickedPlaque) {
+                    plaque.classList.remove('expanded');
+                    plaque.querySelector('.description').classList.add('collapsed');
+                }
+            });
+
+            // Toggle the clicked plaque
+            clickedPlaque.classList.toggle('expanded');
+            const description = clickedPlaque.querySelector('.description');
+            description.classList.toggle('collapsed');
+        }
+
+        function redirectToContact(product, price) {
+            const contactUrl = `contact.html?product=${encodeURIComponent(product)}&price=${encodeURIComponent(price)}`;
+            window.location.href = contactUrl;
+        }
+
+    </script>
+
+</body>
+
+</html>

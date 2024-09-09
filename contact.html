@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .contact-form-container {
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        .contact-form {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .contact-form h2 {
+            margin-bottom: 20px;
+        }
+        .contact-form input, .contact-form textarea, .contact-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .contact-form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+        .back-button {
+            display: block;
+            width: 100px;
+            margin: 20px auto 0;
+            padding: 10px;
+            text-align: center;
+            background-color: #f8f9fa;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color: #e2e6ea;
+        }
+    </style>
+</head>
+<body>
+
+<div class="w3-container contact-form-container">
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
+            <input type="hidden" name="_next" value="http://example.com/thankyou.html">
+            <input type="hidden" name="_subject" value="New Inquiry from Plaque Website">
+            <input type="hidden" name="product" id="product">
+            <input type="hidden" name="page" id="page">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Send Email</button>
+        </form>
+        <a href="index.html" class="back-button">Back</a>
+    </div>
+</div>
+
+<script>
+    // Extract parameters from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById('product').value = urlParams.get('product');
+    document.getElementById('page').value = urlParams.get('page');
+</script>
+
+</body>
+</html>
