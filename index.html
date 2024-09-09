@@ -412,9 +412,12 @@
             description.classList.toggle('collapsed');
         }
 
-        function redirectToContact(product, price) {
-            const contactUrl = `contact.html?product=${encodeURIComponent(product)}&price=${encodeURIComponent(price)}`;
-            window.location.href = contactUrl;
+        function goToContactPage(productName) {
+            // Encode the product name to ensure it is safe for use in a URL
+            const encodedProductName = encodeURIComponent(productName);
+    
+            // Redirect to the contact.html page with the product name as a query parameter
+            window.location.href = `contact.html?product=${encodedProductName}`;
         }
 
     </script>
