@@ -93,6 +93,7 @@
             margin-top: auto;
             /* Push button to the bottom of the plaque */
             padding: 20px;
+            width: 150px;
             background-color: #5e5e5e;
             /* Blue background */
             color: rgb(255, 255, 255);
@@ -162,7 +163,7 @@
             <h4>Tech Support</h4>
             <h1 class="w3-xxxlarge w3-animate-bottom">Bommer IT</h1>
             <div class="w3-padding-32">
-                <button class="contact-button" onclick="redirectToContact('contact', '$0.0')">Contact</button>
+                <button class="contact-button" onclick="goToContactPage('Product Name Here')">Contact</button>
             </div>
         </div>
     </header>
@@ -238,7 +239,7 @@
                         This is a longer description for Item 1 that will be truncated until you hover over the plaque
                         or tap on it. Tap on this plaque to see the full description.
                     </div>
-                    <button class="buy-button" onclick="redirectToContact('Item Name 1')">Buy Now</button>
+                    <button class="buy-button" onclick="goToContactPage('Product Name Here')">Buy</button>
                 </div>
             </div>
             <div class="w3-col l4 m6 s12 w3-padding-small">
@@ -252,7 +253,7 @@
                         This is a longer description for Item 2 that will be truncated until you hover over the plaque
                         or tap on it. Tap on this plaque to see the full description.
                     </div>
-                    <button class="buy-button" onclick="redirectToContact('Item Name 1')">Buy Now</button>
+                    <button class="buy-button" onclick="goToContactPage('Product Name Here')">Buy</button>
                 </div>
             </div>
             <div class="w3-col l4 m6 s12 w3-padding-small">
@@ -266,7 +267,7 @@
                         This is a longer description for Item 3 that will be truncated until you hover over the plaque
                         or tap on it. Tap on this plaque to see the full description.
                     </div>
-                    <button class="buy-button" onclick="redirectToContact('Item Name 1')">Buy Now</button>
+                    <button class="buy-button" onclick="goToContactPage('Product Name Here')">Buy</button>
                 </div>
             </div>
             <div class="w3-col l4 m6 s12 w3-padding-small">
@@ -280,7 +281,7 @@
                         This is a longer description for Item 3 that will be truncated until you hover over the plaque
                         or tap on it. Tap on this plaque to see the full description.
                     </div>
-                    <button class="buy-button" onclick="redirectToContact('Item Name 1')">Buy Now</button>
+                    <button class="buy-button" onclick="goToContactPage('Product Name Here')">Buy</button>
                 </div>
             </div>
             <div class="w3-col l4 m6 s12 w3-padding-small">
@@ -294,7 +295,7 @@
                         This is a longer description for Item 3 that will be truncated until you hover over the plaque
                         or tap on it. Tap on this plaque to see the full description.
                     </div>
-                    <button class="buy-button" onclick="redirectToContact('Item Name 1')">Buy Now</button>
+                    <button class="buy-button" onclick="goToContactPage('Product Name Here')">Buy</button>
                 </div>
             </div>
             <!-- Add more plaques as needed -->
@@ -415,7 +416,7 @@
         function goToContactPage(productName) {
             // Encode the product name to ensure it is safe for use in a URL
             const encodedProductName = encodeURIComponent(productName);
-    
+
             // Redirect to the contact.html page with the product name as a query parameter
             window.location.href = `contact.html?product=${encodedProductName}`;
         }
