@@ -72,6 +72,9 @@
             <input type="hidden" name="_subject" value="New Inquiry from IT Website">
             <input type="hidden" name="product" id="product">
             
+            <!-- Honeypot field for spam prevention -->
+            <input type="text" name="honeypot" style="display:none;">
+            
             <!-- User input fields -->
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
@@ -90,7 +93,8 @@
 <script>
     // Extract parameters from URL
     const urlParams = new URLSearchParams(window.location.search);
-    document.getElementById('product').value = urlParams.get('product');
+    const productParam = urlParams.get('product') || 'default';
+    document.getElementById('product').value = productParam;
 </script>
 
 </body>
