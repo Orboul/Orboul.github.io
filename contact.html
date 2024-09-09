@@ -68,7 +68,7 @@
         <form action="https://formsubmit.co/matthew.sawatzky@proton.me" method="POST">
             <!-- Hidden fields for FormSubmit -->
             <input type="hidden" name="_template" value="box"> <!-- Using the box template -->
-            <input type="hidden" name="_next" value="matthew.sawatzky@github.io/thankyou.html"> <!-- Redirect URL -->
+            <input type="hidden" name="_next" value="thankyou.html"> <!-- Redirect URL -->
             <input type="hidden" name="_subject" value="New Inquiry from IT Website">
             <input type="hidden" name="product" id="product">
             
@@ -91,7 +91,6 @@
     // Extract parameters from URL
     const urlParams = new URLSearchParams(window.location.search);
     document.getElementById('product').value = urlParams.get('product');
-    document.getElementById('page').value = urlParams.get('page');
 </script>
 
 </body>
