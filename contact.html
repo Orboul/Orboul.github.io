@@ -66,16 +66,22 @@
         <h2>Contact Us</h2>
         <!-- Make sure to replace 'YOUR_EMAIL' with your actual email address -->
         <form action="https://formsubmit.co/matthew.sawatzky@proton.me" method="POST">
-            <input type="hidden" name="_next" value="thankyou.html"> <!-- Correct redirect URL -->
-            <input type="hidden" name="_subject" value="New Inquiry from IT Website">
+            <!-- Hidden fields for FormSubmit -->
+            <input type="hidden" name="_template" value="box"> <!-- Using the box template -->
+            <input type="hidden" name="_next" value="thankyou.html"> <!-- Redirect URL -->
+            <input type="hidden" name="_subject" value="New Inquiry from Plaque Website">
             <input type="hidden" name="product" id="product">
             <input type="hidden" name="page" id="page">
+            
+            <!-- User input fields -->
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
             <label for="email">Your Email:</label>
             <input type="email" id="email" name="email" required>
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <!-- Submit and back buttons -->
             <button type="submit">Send Email</button>
         </form>
         <a href="index.html" class="back-button">Back</a>
