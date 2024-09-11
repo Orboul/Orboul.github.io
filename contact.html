@@ -6,7 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
     <style>
+        :root {
+            --primarytext-color: #c4c4c4;
+            --primary-color: #000000;
+            --othertext: #6e6e6e;
+            --secondary-color: #848484;
+            --button-color: #868686;
+            --background-color: #f4f4f4;
+            --button-hover-color: #868686;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--primary-color);
+            margin: 0;
+            padding: 0;
+        }
+
         .contact-form-container {
             width: 80%;
             max-width: 600px;
@@ -16,13 +36,15 @@
 
         .contact-form {
             padding: 20px;
-            border: 1px solid #ddd;
+            border: 1px solid var(--secondary-color);
             border-radius: 8px;
+            background: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .contact-form h2 {
             margin-bottom: 20px;
+            color: var(--primarytext-color);
         }
 
         .contact-form input,
@@ -33,20 +55,21 @@
             padding: 10px;
             margin-bottom: 10px;
             border-radius: 4px;
-            border: 1px solid #ccc;
+            border: 1px solid var(--secondary-color);
         }
 
         .contact-form button {
-            background-color: #007bff;
+            background-color: var(--button-color);
             color: white;
             border: none;
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
+            transition: background-color 0.3s ease;
         }
 
         .contact-form button:hover {
-            background-color: #0056b3;
+            background-color: var(--button-hover-color);
         }
 
         .back-button {
@@ -55,31 +78,48 @@
             margin: 20px auto 0;
             padding: 10px;
             text-align: center;
-            background-color: #f8f9fa;
-            border: 1px solid #ccc;
+            background-color: var(--background-color);
+            border: 1px solid var(--secondary-color);
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
-            color: #007bff;
+            color: var(--button-color);
             text-decoration: none;
+            transition: background-color 0.3s ease;
         }
 
         .back-button:hover {
-            background-color: #e2e6ea;
+            background-color: var(--secondary-color);
+            color: white;
         }
     </style>
 </head>
 
 <body>
 
+    <header class="w3-container w3-theme w3-padding" id="myHeader">
+        <div class="w3-center">
+            <h1 class="w3-xxxlarge w3-animate-bottom">SIMple IT</h1>
+        </div>
+    </header>
+
     <div class="w3-container contact-form-container">
         <div class="contact-form">
             <h2>Contact Us</h2>
             <form action="https://formsubmit.co/matthew.sawatzky@proton.me" method="POST">
-                <!-- Hidden fields for FormSubmit --> 
-                <input type="text" name="name" required>
-                <input type="email" name="email" required>
-                <button type="submit">Send</button>
+                <!-- Hidden fields for FormSubmit -->
+                <input type="hidden" name="_template" value="box">
+                <input type="hidden" name="_next" value="thankyou.html">
+                <input type="hidden" name="_subject" value="New Inquiry from IT Website">
+                <input type="hidden" name="service" id="service" value="General Inquiry">
+
+                <!-- User input fields -->
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="additional-info">Additional Information:</label>
+                <textarea id="additional-info" name="additional-info" rows="4" placeholder="Please provide any additional information you think is relevant..."></textarea>
 
                 <!-- Submit and back buttons -->
                 <button type="submit">Send</button>
@@ -88,17 +128,23 @@
         </div>
     </div>
 
+    <footer class="w3-container w3-theme-dark w3-padding-16">
+        <h3>IT Support</h3>
+        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+        <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+            <span class="w3-text w3-theme-light w3-padding">Go To Top</span>
+            <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge"><i class="fa fa-chevron-circle-up"></i></span></a>
+        </div>
+    </footer>
+
     <script>
         // Extract parameters from URL
         const urlParams = new URLSearchParams(window.location.search);
-        const productParam = urlParams.get('product');
+        const serviceParam = urlParams.get('service');
 
-        // Update the form based on the 'product' parameter
-        if (productParam === 'contact') {
-            document.getElementById('service-section').style.display = 'none';
-            document.getElementById('product').value = 'Contact';
-        } else {
-            document.getElementById('product').value = productParam || 'General Inquiry';
+        // Update the hidden field with the 'service' parameter
+        if (serviceParam) {
+            document.getElementById('service').value = serviceParam;
         }
     </script>
 
